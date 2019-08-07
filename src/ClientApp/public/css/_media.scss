@@ -1,0 +1,55 @@
+﻿@import "_variables.scss";
+
+@mixin only-small {
+    @media only screen and (max-width: $smallLimit) {
+        @content;
+    }
+}
+
+@mixin only-medium {
+    @media only screen and (min-width: $smallLimit + 1) and (max-width: $mediumLimit) {
+        @content;
+    }
+}
+
+@mixin only-large {
+    @media only screen and (min-width: $mediumLimit + 1) and (max-width: $largeLimit) {
+        @content;
+    }
+}
+
+@mixin only-extralarge {
+    @media only screen and (min-width: $largeLimit + 1) {
+        @content;
+    }
+}
+
+@mixin upto-medium {
+    @media only screen and (max-width: $mediumLimit) {
+        @content;
+    }
+}
+
+@mixin upto-large {
+    @media only screen and (max-width: $largeLimit) {
+        @content;
+    }
+}
+
+@mixin from-medium {
+    @media only screen and (min-width: $smallLimit + 1) {
+        @content;
+    }
+}
+
+@mixin from-large {
+    @media only screen and (min-width: $mediumLimit + 1) {
+        @content;
+    }
+}
+
+@mixin only-print {
+    @media only print {
+        @content;
+    }
+}

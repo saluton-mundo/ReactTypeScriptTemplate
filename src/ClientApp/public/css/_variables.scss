@@ -1,0 +1,176 @@
+﻿
+@import "_functions.scss";
+
+// Variables used by the application
+
+// Screen size limits
+$smallLimit: 750px;
+$mediumLimit: 900px;
+$largeLimit: 1280px;
+
+// Theme
+$themeDarkText: #182657;
+$themeLightText: #fff;
+$themeLoginMainBackground: #172656;
+$themeLoginPanelBackground: #fff;
+$themeBackground: #f4f4f4;
+$themeInputBorderLight: #cae7fd;
+$themeMainBackground: rgb(226, 242, 254);
+$themeSubtext: #a9a9a9;
+$themeRequiredRed: #ff1f64;
+$themeAccent: #a15a95;
+
+// Shell
+$themeHeader: #172656;
+$themeHeaderHover: #152048;
+$themeMenu: #62b5e5;
+$themeSubMenu: #D1DAD2;
+$themeHeaderHighlight: #48dbe2;
+$themeHeaderLowlight: #00afbf;
+$themeEditButton: rgb(0, 162, 177);
+
+$themePageHeading: rgb(202, 231, 253);
+$themePageHeadingIcon: #182657;
+
+$themePanelHeading: #182657;
+$themePanelBody: #fff;
+
+$themeFooterBackground: rgb(10, 26, 67);
+$themeTableHeading: rgb(202, 231, 253);
+$themeTableRowOdd: #ededed;
+$themeTableRowEven: #f4f4f4;
+$themeTableRowBorder: none;
+
+$themeDashboardStat: #fff;
+$themeDashboardChart: #fff;
+
+$themeOkay: #009e0f;
+$themeOkayLight: #93c47d;
+$themeWarning: #ff6022;
+$themeWarningLight: #ffa062;
+$themeAmber: #ffbf00;
+$themeDanger: #cf2a27;
+$themeDangerLight: #df6565;
+$themeInfo: #2b78e4;
+$themeInfoLight: #6ea7dc;
+
+$themeDisabled: #a9a9a9;
+
+$themeInputBorder: 1px solid #ccc;
+
+$themeLoginPanelWidth: 400px;
+
+$themeHeaderHeight: 54px;
+
+// Menu
+$themeMenuWidth: 80px;
+$themeMenuItemMarginLeft: 10px;
+$themeMenuItemMarginRight: 0;
+$themeMenuExpandedWidth: 300px;
+$themeFooterHeight: 50px;
+$themeSideMenuMainItemSvg: 40px;
+
+// Login Specific
+$themeLoginBackgroundImage: url("/images/bg.svg");
+$themeLoginBottomBorderColour: rgb(20, 78, 190);
+// Derived
+@function text-on($color) {
+    @return color-contrast($color, $themeDarkText, $themeLightText);
+}
+
+@function subtle-on($color) {
+    @return color-contrast($color, darken($color, 20%), lighten($color, 20%));
+}
+
+$themeText: text-on($themeBackground);
+
+$themeAccentLight: lighten($themeAccent, 20%);
+$themeAccentDark: darken($themeAccent, 20%);
+$themeAccentInverse: invert($themeAccent);
+$themeAccentComplement: complement($themeAccent);
+$themeSubtleOnAccent: subtle-on($themeAccent);
+
+
+
+$themeTextOnHeader: text-on($themeHeader);
+$themeSubtleOnHeader: subtle-on($themeHeader);
+
+$themeTextOnMenu: text-on($themeMenu);
+$themeTextOnSubMenu: text-on($themeSubMenu);
+
+$themeTextOnOkay: text-on($themeOkay);
+$themeTextOnWarning: text-on($themeWarning);
+$themeTextOnDanger: text-on($themeDanger);
+
+$themeInputBorderFocused: $themeAccentLight;
+$themeInputBorderError: $themeDanger;
+
+@mixin severity {
+    &.okay {
+        background-color: $themeOkay;
+        color: text-on($themeOkay);
+    }
+
+    &.warning {
+        background-color: $themeWarning;
+        color: text-on($themeWarning);
+    }
+
+    &.danger {
+        background-color: $themeDanger;
+        color: text-on($themeDanger);
+    }
+
+    &.info {
+        background-color: $themeInfo;
+        color: text-on($themeInfo);
+    }
+
+    &.okayLight {
+        background-color: $themeOkayLight;
+        color: text-on($themeOkayLight);
+    }
+
+    &.warningLight {
+        background-color: $themeWarningLight;
+        color: text-on($themeWarningLight);
+    }
+
+    &.dangerLight {
+        background-color: $themeDangerLight;
+        color: text-on($themeDangerLight);
+    }
+
+    &.infoLight {
+        background-color: $themeInfoLight;
+        color: text-on($themeInfoLight);
+    }
+}
+
+@mixin severityBorder {
+    &.okay {
+        border: 1px solid $themeOkay;
+    }
+
+    &.warning {
+        border: 1px solid $themeWarning;
+    }
+
+    &.danger {
+        border: 1px solid $themeDanger;
+    }
+}
+
+@mixin severityText {
+    &.okay {
+        color: $themeOkay;
+    }
+
+    &.warning {
+        color: $themeWarning;
+    }
+
+    &.danger {
+        color: $themeDanger;
+    }
+}

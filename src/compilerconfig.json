@@ -1,0 +1,17 @@
+﻿[
+  {
+    "outputFile": "wwwroot/css/scss/site.css",
+    "inputFile": "wwwroot/css/scss/site.scss",
+    "options": {
+      "sourceMap": true
+    }
+  },
+  {
+    "outputFile": "ClientApp/scss/site.css",
+    "inputFile": "ClientApp/scss/site.scss"
+  },
+  {
+    "outputFile": "ClientApp/public/css/site.css",
+    "inputFile": "ClientApp/public/css/site.scss"
+  }
+]

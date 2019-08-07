@@ -1,0 +1,96 @@
+﻿@import "_variables.scss";
+@import "_media.scss";
+
+$columns: 12;
+
+.grid {
+    display: flex;
+    -ms-flex-flow: row wrap;
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+
+    &.no-padding-top {
+        padding-top: 0;
+    }
+
+    &.grid-form {
+        background: $themeTableRowOdd;
+    }
+
+    @for $i from 1 through $columns {
+        $width: (100% / $columns * $i);
+
+        .col-#{$i} {
+            width: $width;
+            padding: 4px;
+
+            &.no-padding {
+                padding: 0;
+            }
+
+            &.no-padding-left {
+                padding-left: 0;
+            }
+        }
+
+        .col-s-#{$i} {
+            @include only-small {
+                width: $width;
+                padding: 4px;
+            }
+
+            &.no-padding {
+                padding: 0;
+            }
+
+            &.no-padding-left {
+                padding-left: 0;
+            }
+        }
+
+        .col-m-#{$i} {
+            @include only-medium {
+                width: $width;
+                padding: 4px;
+            }
+
+            &.no-padding {
+                padding: 0;
+            }
+
+            &.no-padding-left {
+                padding-left: 0;
+            }
+        }
+
+        .col-l-#{$i} {
+            @include only-large {
+                width: $width;
+                padding: 4px;
+            }
+
+            &.no-padding {
+                padding: 0;
+            }
+
+            &.no-padding-left {
+                padding-left: 0;
+            }
+        }
+
+        .col-xl-#{$i} {
+            @include only-extralarge {
+                width: $width;
+                padding: 4px;
+            }
+
+            &.no-padding {
+                padding: 0;
+            }
+
+            &.no-padding-left {
+                padding-left: 0;
+            }
+        }
+    }
+}
